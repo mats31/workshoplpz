@@ -19,7 +19,7 @@ export default Vue.extend({
   data() {
 
     return {
-      bound_onCanvasMousemove: this.onCanvasMousemove.bind(this),
+      // bound_onCanvasMousemove: this.onCanvasMousemove.bind(this),
       cameraTarget: 0,
       displayGreyLine: false,
       height: 56,
@@ -51,8 +51,8 @@ export default Vue.extend({
     document.addEventListener( 'keyup', this.onKeyup, false);
   },
 
-  ready() {
-    this.$els.canvas.appendChild( this.webgl.renderer.domElement );
+  mounted() {
+    this.$refs.canvas.appendChild( this.webgl.renderer.domElement );
     this.animate();
 
     // setTimeout( () => {
@@ -143,7 +143,7 @@ export default Vue.extend({
       this.initialCamera = this.webgl.camera.position.x;
       this.initialX = event.pageX;
 
-      this.$els.canvas.addEventListener( 'mousemove', this.bound_onCanvasMousemove, false );
+      this.$refs.canvas.addEventListener( 'mousemove', this.bound_onCanvasMousemove, false );
     },
 
     onMousemove( event ) {
@@ -158,7 +158,7 @@ export default Vue.extend({
     },
 
     onMouseup() {
-      this.$els.canvas.removeEventListener( 'mousemove', this.bound_onCanvasMousemove, false );
+      this.$refs.canvas.removeEventListener( 'mousemove', this.bound_onCanvasMousemove, false );
     },
 
     onResize() {
@@ -173,7 +173,7 @@ export default Vue.extend({
         }
 
         if ( i === assets.textures.length - 1 ) {
-          this.$els.whiteline.style.width = `${window.innerWidth / assets.textures.length}px`;
+          this.$refs.whiteline.style.width = `${window.innerWidth / assets.textures.length}px`;
         }
       }
     },
@@ -185,7 +185,7 @@ export default Vue.extend({
       this.displayGreyLine = true;
 
       tl.fromTo(
-        this.$els.canvas,
+        this.$refs.canvas,
         1,
         {
           opacity: 0,
@@ -207,7 +207,7 @@ export default Vue.extend({
         '-=1'
       )
       .to(
-        this.$els.whiteline,
+        this.$refs.whiteline,
         1,
         {
           scaleX: 2,
@@ -216,7 +216,7 @@ export default Vue.extend({
         '-=1'
       )
       .to(
-        this.$els.navigation,
+        this.$refs.navigation,
         2,
         {
           opacity: 1,

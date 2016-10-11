@@ -1,6 +1,7 @@
 import domready from 'domready';
 
 import Application from 'containers/Application/Application';
+import template from 'containers/Application/application.html';
 import AssetLoader from 'core/AssetLoader';
 import Emitter from 'core/Emitter';
 import Router from 'core/Router';
@@ -29,7 +30,9 @@ class Main {
   }
 
   start() {
-    this.router.start(Application, '#application');
+    new Application({
+      router: this.router,
+    }).$mount('#application');
   }
 }
 

@@ -1,10 +1,10 @@
 <div class="projectSlider">
 
-  <div class="projectSlider__canvasContainer" v-el:canvas v-on:mousedown="onMousedown" v-on:mouseup="onMouseup"></div>
+  <div class="projectSlider__canvasContainer" ref="canvas" v-on:mousedown="onMousedown" v-on:mouseup="onMouseup"></div>
   <div class="projectSlider__greyline" v-if="displayGreyLine"></div>
-  <div class="projectSlider__whiteline" v-el:whiteline></div>
+  <div class="projectSlider__whiteline" ref="whiteline"></div>
 
-  <div class="projectSlider__navigation" v-el:navigation>
+  <div class="projectSlider__navigation" ref="navigation">
 
     <svg version="1.1" x="0px" y="0px" viewBox="0 0 15.1 10" xml:space="preserve" width="15" height="10" v-on:click="goToPreviousProject">
       <g>

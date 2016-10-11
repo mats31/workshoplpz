@@ -34,7 +34,7 @@ export default Vue.extend({
     this.emitter.on('assetLoaded', this.assetLoaded);
   },
 
-  ready() {
+  mounted() {
     this.inTl();
   },
 
@@ -47,8 +47,8 @@ export default Vue.extend({
         this.loadValue += 1;
       }
 
-      this.$els.percent.innerText = `${this.percentValue} %`;
-      this.$els.secondline.style = `transform: translate3D( 0, -100%, 0 ) scale3D(${this.percentValue / 100}, 1, 1);`;
+      this.$refs.percent.innerText = `${this.percentValue} %`;
+      this.$refs.secondline.style = `transform: translate3D( 0, -100%, 0 ) scale3D(${this.percentValue / 100}, 1, 1);`;
 
       if ( this.loadValue >= 100 ) {
         raf.cancel(requestanimationframe);
@@ -68,13 +68,13 @@ export default Vue.extend({
       const tl = new TimelineLite();
 
       tl.to(
-        this.$els.percent,
+        this.$refs.percent,
         2,
         {
           opacity: 1,
         }
       ).to(
-        this.$els.firstline,
+        this.$refs.firstline,
         2,
         {
           scaleX: 1,
@@ -89,16 +89,16 @@ export default Vue.extend({
     outTl() {
       const tl = new TimelineLite();
 
-      this.$els.secondline.style = 'transition: intial;';
+      this.$refs.secondline.style = 'transition: intial;';
 
       tl.to(
-        this.$els.percent,
+        this.$refs.percent,
         0.5,
         {
           opacity: 0,
         }
       ).fromTo(
-        this.$els.secondline,
+        this.$refs.secondline,
         0.25,
         {
           scaleX: 1,

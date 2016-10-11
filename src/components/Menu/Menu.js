@@ -21,7 +21,7 @@ export default Vue.extend({
     this.emitter.on('loader-end', this.inTl);
   },
 
-  ready() {},
+  mounted() {},
 
   methods: {
 
@@ -30,7 +30,7 @@ export default Vue.extend({
       const tl = new TimelineLite();
 
       tl.to(
-        this.$els.container,
+        this.$refs.container,
         2,
         {
           opacity: 1,

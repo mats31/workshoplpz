@@ -17,7 +17,7 @@ export default Vue.extend({
 
   created() {},
 
-  ready() {},
+  mounted() {},
 
   methods: {
 

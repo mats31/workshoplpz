@@ -11,31 +11,23 @@ export default class Router extends VueRouter {
   constructor() {
 
     super({
-      hashbang: false,
-      pushState: true,
-      history: true,
-      abstract: false,
-      saveScrollPosition: false,
-      transitionOnLoad: false,
+      base: '/',
+      mode: 'history',
     });
 
     this.path = '/';
     this.firstRoute = true;
     this.routeTimeout = null;
 
-
-    this.map({
-
-      '/project': {
-        name: 'project',
+    this.routes = [
+      {
         component: ProjectContainer,
-        subRoutes: {
-          '/orange': {
-            component: OrangeComponent,
-          },
-        },
+        name: 'project',
+        path: '/project',
+        children: [
+          { component: OrangeComponent, name: 'orange', path: '/orange' },
+        ],
       },
-
-    });
+    ];
   }
 }

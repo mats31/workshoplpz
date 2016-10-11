@@ -19,7 +19,7 @@ export default Vue.extend({
 
   },
 
-  ready() {
+  mounted() {
     // this.emitter = Emitter;
     // this.emitter.on('loader-end', this.displayHomepage);
   },

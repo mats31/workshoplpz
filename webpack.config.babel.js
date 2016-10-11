@@ -63,7 +63,7 @@ export default {
       template: 'src/template/index.tpl.html',
     }),
     new webpack.ProvidePlugin({
-      Vue: 'vue',
+      Vue: 'vue/dist/vue',
     }),
     new CopyWebpackPlugin([
       { from: 'static' },
