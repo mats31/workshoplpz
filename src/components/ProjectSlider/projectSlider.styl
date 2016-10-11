@@ -1,0 +1,45 @@
+.projectSlider
+  .projectSlider__greyline
+    background rgba( 255, 255, 255, 0.3 )
+    height 1px
+    left 0
+    margin 0
+    position absolute
+    top 50%
+    width 100%
+    z-index 1
+    transform translate3D( 0, -50%, 0 )
+  .projectSlider__whiteline
+    background rgba( 255, 255, 255, 1 )
+    height 1px
+    left 0
+    margin 0
+    position absolute
+    top 50%
+    z-index 1
+    transform translate3D( -50%, -50%, 0 ) scale3D( 0, 1, 1)
+  .projectSlider__canvasContainer
+    opacity 0
+    transform translate3D(100%, 0, 0)
+  .projectSlider__navigation
+    bottom 9%
+    left 50%
+    opacity 0
+    position absolute
+    transform translate3D( -50%, 0, 0 )
+    hr
+      background #ffffff
+      border none
+      display inline-block
+      height 17px
+      margin 0
+      vertical-align middle
+      width 1px
+    svg
+      cursor pointer
+      display inline-block
+      vertical-align middle
+      &:first-child
+        margin-right 20px
+      &:last-child
+        margin-left 19px

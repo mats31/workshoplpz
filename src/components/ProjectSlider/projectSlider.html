@@ -1,0 +1,33 @@
+<div class="projectSlider">
+
+  <div class="projectSlider__canvasContainer" v-el:canvas v-on:mousedown="onMousedown" v-on:mouseup="onMouseup"></div>
+  <div class="projectSlider__greyline" v-if="displayGreyLine"></div>
+  <div class="projectSlider__whiteline" v-el:whiteline></div>
+
+  <div class="projectSlider__navigation" v-el:navigation>
+
+    <svg version="1.1" x="0px" y="0px" viewBox="0 0 15.1 10" xml:space="preserve" width="15" height="10" v-on:click="goToPreviousProject">
+      <g>
+      	<rect x="0.5" y="4.5" style="fill:#FFFFFF;" width="14.5" height="1"/>
+      	<g>
+          <rect x="-0.7" y="6.7" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 -0.2114 14.2285)" style="fill:#FFFFFF;" width="7.1" height="1"/>
+          <rect x="-0.7" y="2.4" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 6.8591 2.8411)" style="fill:#FFFFFF;" width="7.1" height="1"/>
+      	</g>
+      </g>
+    </svg>
+
+    <hr>
+
+    <svg version="1.1" x="0px" y="0px" viewBox="-632 396 15 10" xml:space="preserve" width="15" height="10" v-on:click="goToNextProject">
+      <g>
+      	<rect x="-632.1" y="400.4" style="fill:#FFFFFF;" width="14.5" height="1"/>
+      	<g>
+          <rect x="-623.5" y="398.3" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 -1340.2935 242.4438)" style="fill:#FFFFFF;" width="7.1" height="1"/>
+          <rect x="-623.4" y="402.6" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 -773.1232 1126.4824)" style="fill:#FFFFFF;" width="7.1" height="1"/>
+      	</g>
+      </g>
+    </svg>
+
+  </div>
+
+</div>
